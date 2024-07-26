@@ -37,9 +37,9 @@ const cardContainer = document.querySelector('.card-container');
 
 
 
-// ciclo per stambare nel html gli oggetti contenuti nell'array
+// ciclo per stampare nel html gli oggetti contenuti nell'array
 
-for(let j = 0; j < images.length; j ++){
+/*for(let j = 0; j < images.length; j ++){
     
     if(j == 0){
     cardContainer.innerHTML+=   `<div class=" active">
@@ -66,12 +66,29 @@ for(let j = 0; j < images.length; j ++){
                                     </div>`;
     };
 
-    }
-    
-    
+    }*/
 
-  
-const allCard = document.querySelectorAll('.card-container > div')
+    // ciclo per stampare nel html gli oggetti contenuti nell'array codice ottimizzato
+
+    for(let j = 0; j < images.length; j ++){
+
+    cardContainer.innerHTML+=   `<div class=" card">
+                                        <div class = "info-card">
+                                            <h2> ${images[j].title}</h2>
+                                            <p> ${images[j].text} </p>
+                                        </div>
+                                        <div class= "img-container">
+                                            <img src=${images[j].image}>
+                                        </div>
+                                    </div>`;
+                                 }
+                      
+        const firstCard = document.querySelector( '.card:first-child');
+
+        firstCard.classList.add('active');
+    
+        
+const allCard = document.querySelectorAll('.card')
 let activeCard = 0;
 
 // imposta funzione per andare avanti con le card

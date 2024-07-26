@@ -30,7 +30,7 @@ img,
 }
 
 
-.card-container > div {
+.card-container .card {
 
     display: none;
 }
@@ -40,6 +40,7 @@ img,
     height: 100%;
     display: block;
 }
+
 
 .info-card{
 
